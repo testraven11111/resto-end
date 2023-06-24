@@ -15,8 +15,21 @@ class App {
             this._drawer.classList.toggle('open');
             event.stopPropagation();
         });
+
         this._main.addEventListener('click', () => {
             this._drawer.classList.remove('open');
+        });
+
+        // Menambahkan event listener pada saat di-scroll
+        window.addEventListener('scroll', () => {
+            const skipLink = document.querySelector('.skip-link');
+
+            // Memeriksa apakah user telah menscroll ke bawah
+            if (window.scrollY > 0) {
+                skipLink.style.display = 'block'; // Menampilkan tombol skip to content
+            } else {
+                skipLink.style.display = 'none'; // Menyembunyikan tombol skip to content
+            }
         });
     }
 
@@ -33,6 +46,10 @@ class App {
         }
 
         this._drawer.classList.remove('open');
+
+        // Menyembunyikan tombol skip to content pada saat load awal
+        const skipLink = document.querySelector('.skip-link');
+        skipLink.style.display = 'none';
     }
 }
 
