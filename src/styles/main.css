@@ -299,9 +299,9 @@ footer {
 }
 
 .skip-link {
-    position: absolute;
-    top: -100px;
-    left: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
     background-color: #bf1722;
     color: white;
     padding: 10px;
@@ -309,10 +309,6 @@ footer {
     z-index: 100;
     text-decoration: none;
 }
-
-    .skip-link:focus {
-        top: 100px;
-    }
 
 .review-card {
     border: 1px solid #FFA500;
